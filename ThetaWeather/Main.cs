@@ -29,6 +29,8 @@ namespace ThetaWeather
                 foreach (string line in lines)
                 {
                     var lineProps = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    //some temperatures have stars to indicate they are monthly max or min - remove this info since we don't need it
                     lineProps[1] = lineProps[1].Replace("*", "");
                     lineProps[2] = lineProps[2].Replace("*", "");
                     days.Add(new DayModel(int.Parse(lineProps[0]), int.Parse(lineProps[1]), int.Parse(lineProps[2])));
