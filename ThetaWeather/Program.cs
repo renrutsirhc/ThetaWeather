@@ -1,0 +1,6 @@
+﻿using ThetaWeather;
+
+new Main();
+
+
+
